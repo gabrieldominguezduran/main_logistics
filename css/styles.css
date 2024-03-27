@@ -1,0 +1,175 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Defining font colors based on the provided design */
+:root {
+  --main-blue: #003366;
+  --light-blue: #3399ff;
+  --main-green: #339966;
+}
+
+/* Website typography */
+body {
+  font-family: "Arial", sans-serif;
+  color: var(--main-blue);
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  background: var(--main-green);
+  color: #fff;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1;
+  position: sticky; /* Add this line */
+  top: 0; /* Add this line */
+}
+
+.navbar a {
+  color: inherit; /* Makes the color the same as the parent element */
+  text-decoration: none; /* Removes underline */
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li a {
+  color: #fff;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+.navbar .toggler {
+  display: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 930px) {
+  .navbar ul {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: var(--main-green);
+    width: 100%;
+    transition: left 0.3s ease;
+  }
+  .navbar ul li {
+    margin: 1rem 0;
+  }
+  .navbar ul.active {
+    left: 0;
+  }
+  .navbar .toggler {
+    display: initial;
+  }
+}
+
+/* Logo and menu items */
+
+.menu {
+  display: flex;
+  gap: 1em;
+}
+.menu-item {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+}
+.menu-item:hover {
+  background-color: var(--light-blue);
+}
+
+.main-logo {
+  /* Adjust the size of the logo container if needed */
+  flex: 0 0 auto; /* This means the logo will not grow or shrink */
+}
+
+.main-logo img {
+  max-height: 3rem; /* Adjust this value as needed to scale down your logo */
+  width: auto; /* This will maintain the aspect ratio of the image */
+  margin-right: 10px; /* Adds some space between the logo and the menu items */
+}
+
+/* Main page */
+
+.main-svg {
+  background-image: url("../assets/container.svg");
+  background-size: contain; /* Ensures the entire SVG is visible */
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Consider using 'scroll' instead of 'fixed' for responsiveness */
+  background-position: center top; /* Aligns the SVG at the bottom of the section */
+  min-height: 100vh;
+}
+
+.main-page h1 {
+  font-size: 3rem;
+  color: var(
+    --main-blue
+  ); /* or any color that contrasts well with your background */
+}
+
+@media (max-width: 768px) {
+  .main-svg {
+    min-height: 50vh; /* Reduce the height to reduce the space below the SVG */
+    background-position: center 90%; /* Adjust the background position */
+  }
+}
+
+/* Section styling */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+section {
+  scroll-margin-top: 70px; /* This value should be equal or greater than the height of your fixed navbar */
+}
+
+.main-page h1,
+.about,
+.services,
+.competitive-prices,
+.team,
+.contact,
+.gallery,
+.section-img {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 2rem; /* Adjust this value based on your navbar height */
+}
+
+section > p {
+  max-width: 800px; /* Keeps lines of text at a readable length */
+  margin: auto; /* Centers the paragraphs */
+  padding: 1rem;
+  text-align: left; /* Left aligns the text inside paragraphs */
+  font-size: 1rem; /* Adjust the font size as needed */
+  line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.section-logo img {
+  max-height: 20rem; /* Adjust this value as needed to scale down your logo */
+  width: auto; /* This will maintain the aspect ratio of the image */
+  margin-right: 10px; /* Adds some space between the logo and the menu items */
+}
+
+/* Footer styling */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-blue);
+  color: white;
+  padding: 1rem;
+}
