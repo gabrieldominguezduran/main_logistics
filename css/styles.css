@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 /* General reset */
 * {
   margin: 0;
@@ -14,8 +15,17 @@
 
 /* Website typography */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--main-blue);
+}
+
+.background {
+  background-image: url("../assets/background.svg");
+  background-size: contain; /* Ensures the entire SVG is visible */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center; /* Aligns the SVG at the bottom of the section */
+  min-height: 100vh;
 }
 
 /* Navbar styles */
@@ -100,6 +110,12 @@ body {
 
 /* Main page */
 
+.main-page {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
 .main-svg {
   background-image: url("../assets/container.svg");
   background-size: contain; /* Ensures the entire SVG is visible */
@@ -107,19 +123,25 @@ body {
   background-attachment: scroll; /* Consider using 'scroll' instead of 'fixed' for responsiveness */
   background-position: center top; /* Aligns the SVG at the bottom of the section */
   min-height: 100vh;
+  opacity: 0.7;
 }
 
 .main-page h1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  align-self: center;
   font-size: 3rem;
-  color: var(
-    --main-blue
-  ); /* or any color that contrasts well with your background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: var(--main-blue);
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
+  .main-page {
+    grid-template-columns: 1fr;
+  }
   .main-svg {
-    min-height: 50vh; /* Reduce the height to reduce the space below the SVG */
-    background-position: center 90%; /* Adjust the background position */
+    min-height: 50%;
   }
 }
 
@@ -129,11 +151,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 5rem;
-}
-
-section {
-  scroll-margin-top: 70px; /* This value should be equal or greater than the height of your fixed navbar */
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 70px;
 }
 
 .main-page h1,
