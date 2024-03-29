@@ -28,6 +28,14 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 640px) {
+  .background {
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: center top;
+  }
+}
+
 /* Navbar styles */
 .navbar {
   display: flex;
@@ -126,14 +134,30 @@ body {
   opacity: 0.7;
 }
 
-.main-page h1 {
+.threeD {
+  color: var(--main-blue);
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   align-self: center;
-  font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: var(--main-blue);
-  opacity: 0.9;
+  transform: translate(10%, -10%);
+  font-size: 3em;
+  transition: 0.3s;
+  text-shadow: 1px 1px 0 rgba(51, 153, 102, 0.1),
+    1px 2px 0 rgba(51, 153, 102, 0.1), 1px 3px 0 rgba(51, 153, 102, 0.1),
+    1px 4px 0 rgba(51, 153, 102, 0.1), 1px 5px 0 rgba(51, 153, 102, 0.1),
+    1px 6px 0 rgba(51, 153, 102, 0.1), 1px 7px 0 rgba(51, 153, 102, 0.1),
+    1px 8px 0 rgba(51, 153, 102, 0.1), 5px 13px 15px rgba(51, 153, 102, 0.5);
+}
+
+.threeD:hover {
+  transition: 0.3s;
+  transform: scale(1.1) translate(10%, -10%);
+  text-shadow: 1px -1px 0 rgba(51, 153, 102, 0.1),
+    1px -2px 0 rgba(51, 153, 102, 0.1), 1px -3px 0 rgba(51, 153, 102, 0.1),
+    1px -4px 0 rgba(51, 153, 102, 0.1), 1px -5px 0 rgba(51, 153, 102, 0.1),
+    1px -6px 0 rgba(51, 153, 102, 0.1), 1px -7px 0 rgba(51, 153, 102, 0.1),
+    1px -8px 0 rgba(51, 153, 102, 0.1), 5px -13px 15px rgba(51, 153, 102, 0.5),
+    5px -13px 25px #808080;
 }
 
 @media (max-width: 768px) {
@@ -142,6 +166,15 @@ body {
   }
   .main-svg {
     min-height: 50%;
+  }
+  .threeD {
+    transform: none;
+    font-size: 2em;
+  }
+
+  .threeD:hover {
+    transform: none;
+    font-size: 2em;
   }
 }
 
@@ -153,7 +186,7 @@ section {
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.85);
   box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
-  scroll-margin-top: 70px;
+  scroll-margin-top: 50px;
 }
 
 .main-page h1,
@@ -166,12 +199,11 @@ section {
 .section-img {
   text-align: center;
   margin-top: 0;
-  padding-top: 2rem; /* Adjust this value based on your navbar height */
 }
 
 section > p {
   max-width: 800px; /* Keeps lines of text at a readable length */
-  margin: auto; /* Centers the paragraphs */
+  margin: 0 auto; /* Centers the paragraphs */
   padding: 1rem;
   text-align: left; /* Left aligns the text inside paragraphs */
   font-size: 1rem; /* Adjust the font size as needed */
@@ -181,7 +213,6 @@ section > p {
 .section-logo img {
   max-height: 20rem; /* Adjust this value as needed to scale down your logo */
   width: auto; /* This will maintain the aspect ratio of the image */
-  margin-right: 10px; /* Adds some space between the logo and the menu items */
 }
 
 /* Footer styling */
