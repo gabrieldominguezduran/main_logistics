@@ -142,7 +142,7 @@ body {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   align-self: center;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 3em;
   transform: translate(10%, -10%);
   background-image: linear-gradient(to right, #33996694, #339966);
