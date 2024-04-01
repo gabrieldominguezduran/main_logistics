@@ -16,6 +16,7 @@
 
 /* Website typography */
 body {
+  max-width: 1500px;
   font-family: "Roboto", sans-serif;
   color: var(--main-blue);
 }
