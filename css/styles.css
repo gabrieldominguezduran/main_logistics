@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 /* General reset */
 * {
@@ -10,14 +10,15 @@
 /* Defining font colors based on the provided design */
 :root {
   --main-blue: #003366;
-  --light-blue: #3399ff;
   --main-green: #339966;
 }
 
 /* Website typography */
 body {
   max-width: 1500px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   color: var(--main-blue);
 }
 
@@ -41,9 +42,9 @@ body {
 /* Navbar styles */
 .navbar {
   display: flex;
-  background: var(--main-green);
-  color: #fff;
+  background: #fff;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
   z-index: 1;
   position: sticky;
@@ -57,12 +58,17 @@ body {
 .navbar ul {
   display: flex;
   list-style: none;
+  justify-content: flex-end;
+  width: 100%;
 }
 .navbar ul li a {
-  color: #fff;
+  display: block;
+  color: var(--main-green);
   padding: 0.75rem;
   margin: 0 0.25rem;
+  text-align: center;
   text-decoration: none;
+  width: 100%;
 }
 .navbar .toggler {
   display: none;
@@ -77,7 +83,7 @@ body {
     left: -100%;
     top: 5rem;
     flex-direction: column;
-    background-color: var(--main-green);
+    background-color: #003366;
     width: 100%;
     max-height: calc(100vh - 5rem);
     overflow-y: auto;
@@ -86,6 +92,10 @@ body {
   }
   .navbar ul li {
     margin: 1rem 0;
+  }
+  .navbar ul li a {
+    width: 100%;
+    color: #fff;
   }
   .navbar ul.active {
     left: 0;
@@ -107,7 +117,17 @@ body {
   padding: 0.5em;
 }
 .menu-item:hover {
-  background-color: var(--light-blue);
+  background-color: var(--main-blue);
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 930px) {
+  .menu-item:hover {
+    background-color: var(--main-green);
+    transition: transform 0.5s ease-in-out;
+  }
 }
 
 .main-logo {
@@ -115,9 +135,15 @@ body {
 }
 
 .main-logo img {
-  max-height: 3rem;
+  max-height: 4rem;
   width: auto;
   margin-right: 10px;
+}
+
+.main-logo img:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 /* Main page */
@@ -151,12 +177,15 @@ body {
   background-repeat: no-repeat;
   background-position: 100% 0%;
   transition: background-size 0.7s, background-position 0.5s ease-in-out;
+  padding: 0.5em;
+  margin-right: 1rem;
 }
 
 .title:hover {
   background-size: 100% 100%;
   background-position: 0% 100%;
   transition: background-position 0.7s, background-size 0.5s ease-in-out;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
@@ -194,7 +223,6 @@ section {
 .main-page h1,
 .about,
 .services,
-.competitive-prices,
 .team,
 .contact,
 .gallery,
@@ -212,13 +240,75 @@ section > p {
   margin: 0 auto;
   padding: 1rem;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
+}
+
+section > p > a {
+  background-color: #33996696;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .section-logo img {
   max-height: 20rem;
   width: auto;
+}
+
+/* Team section */
+
+.team-members {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.team-members p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.team-members p span,
+.team-members p a {
+  margin-left: auto;
+}
+
+/* Styles for small screens */
+@media (max-width: 640px) {
+  .team-members p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .team-members p span,
+  .team-members p a {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .telephone-link {
+    padding: 0.25rem 0;
+  }
+}
+
+/* Style for the telephone links */
+.telephone-link {
+  background-color: #33996671;
+  color: var(--main-blue);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for telephone links */
+.telephone-link:hover {
+  background-color: var(--main-blue);
+  color: white;
 }
 
 /* Gallery section */
