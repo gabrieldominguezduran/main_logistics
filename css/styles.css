@@ -20,6 +20,7 @@ body {
   font-weight: 500;
   font-style: normal;
   color: var(--main-blue);
+  margin: 0 auto;
 }
 
 .background {
@@ -29,6 +30,15 @@ body {
   background-attachment: fixed;
   background-position: center center;
   min-height: 100vh;
+}
+
+@media (max-width: 930px) {
+  .background {
+    background-size: auto;
+    background-attachment: scroll;
+    background-position: center top;
+    margin-top: 3rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -152,6 +162,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
+  max-height: 80vh;
 }
 
 .main-svg {
@@ -162,6 +173,12 @@ body {
   background-position: center top; /* Aligns the SVG at the bottom of the section */
   min-height: 100vh;
   opacity: 0.7;
+}
+
+@media (max-width: 930px) {
+  .main-svg {
+    margin-top: 5rem;
+  }
 }
 
 .title {
@@ -191,6 +208,7 @@ body {
 @media (max-width: 768px) {
   .main-page {
     grid-template-columns: 1fr;
+    min-height: 100vh;
   }
   .main-svg {
     min-height: 50%;
@@ -212,12 +230,13 @@ body {
 
 /* Section styling */
 section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
   scroll-margin-top: 50px;
+}
+.sections-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
 }
 
 .main-page h1,
@@ -229,10 +248,6 @@ section {
 .section-img {
   text-align: center;
   margin-top: 0;
-}
-
-.main-page {
-  min-height: 100vh;
 }
 
 section > p {
@@ -251,62 +266,91 @@ section > p > a {
   border-radius: 5px;
 }
 
+.contact-text {
+  max-width: 80%;
+  font-size: 3rem;
+}
+
 .section-logo img {
   max-height: 20rem;
   width: auto;
 }
 
-/* Team section */
+@media (max-width: 930px) {
+  .sections-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.team-members {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
+  .contact-text {
+    font-size: 1.5rem;
+  }
 }
 
-.team-members p {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+/* Team section */
+
+.team-member-card {
+  margin: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.team-member-card:hover {
+  background: #33996637;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.member-name {
+  margin: 0.5rem 0 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.member-role {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.member-email {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+/* Responsive Grid */
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-.team-members p span,
-.team-members p a {
-  margin-left: auto;
-}
-
-/* Styles for small screens */
-@media (max-width: 640px) {
-  .team-members p {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .team-members p span,
-  .team-members p a {
-    margin-left: 0;
-    margin-top: 0.5rem;
-  }
-
-  .telephone-link {
-    padding: 0.25rem 0;
+@media only screen and (max-width: 600px) {
+  .team-members {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Style for the telephone links */
-.telephone-link {
+/* Style for the telephone and email links */
+.contact-link {
   background-color: #33996671;
   color: var(--main-blue);
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Hover effect for telephone links */
-.telephone-link:hover {
+.contact-link:hover {
   background-color: var(--main-blue);
   color: white;
 }
