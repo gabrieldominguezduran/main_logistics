@@ -229,14 +229,20 @@ body {
 }
 
 /* Section styling */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
 section {
   background-color: rgba(255, 255, 255, 0.85);
   scroll-margin-top: 50px;
-}
-.sections-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
 }
 
 .main-page h1,
@@ -247,7 +253,13 @@ section {
 .gallery,
 .section-img {
   text-align: center;
-  margin-top: 0;
+  margin: 0;
+}
+
+img {
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 50%;
 }
 
 section > p {
@@ -257,6 +269,9 @@ section > p {
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.6;
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 50%;
 }
 
 section > p > a {
@@ -264,6 +279,11 @@ section > p > a {
   text-decoration: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.services img {
+  max-width: 60%;
+  height: auto;
 }
 
 .contact-text {
@@ -283,6 +303,11 @@ section > p > a {
     justify-content: center;
   }
 
+  .services img {
+    max-width: 90%;
+    height: auto;
+  }
+
   .contact-text {
     font-size: 1.5rem;
   }
@@ -294,6 +319,9 @@ section > p > a {
   margin: 1rem;
   overflow: hidden;
   transition: box-shadow 0.3s ease-in-out;
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 50%;
 }
 
 .team-member-card:hover {
@@ -318,9 +346,8 @@ section > p > a {
   color: #666666;
 }
 
-.member-email {
+.email {
   margin: 0.5rem 0;
-  font-size: 0.75rem;
   text-decoration: none;
 }
 
@@ -329,6 +356,11 @@ section > p > a {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+
+.team img {
+  max-width: 60%;
+  height: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -357,26 +389,28 @@ section > p > a {
 /* Gallery section */
 
 .img-gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 1rem;
 }
 
 .img-gallery img {
-  max-width: 30%;
+  max-width: 100%;
   height: auto;
 }
 
 /* Small screens */
 @media (max-width: 767px) {
+  .team img {
+    max-width: 90%;
+  }
   .img-gallery {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .img-gallery img {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 10px;
   }
