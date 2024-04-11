@@ -421,6 +421,11 @@ section > p > a {
   gap: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .team-container > img {
+    width: 50%;
+  }
+}
 @media (max-width: 800px) {
   .team-container {
     flex-direction: column;
@@ -428,8 +433,7 @@ section > p > a {
   }
 
   .team-container > img {
-    width: 80%;
-    margin-right: 0;
+    width: 50%;
   }
 
   .team-members {
@@ -444,7 +448,7 @@ section > p > a {
 
 @media (max-width: 600px) {
   .team img {
-    max-width: 90%;
+    max-width: 70%;
   }
   .team-member-card {
     flex: 0 1 100%;
@@ -455,6 +459,10 @@ section > p > a {
 }
 
 /* Gallery section */
+
+.gallery img {
+  animation-range: entry 25% cover 25%;
+}
 
 .img-gallery {
   display: grid;
@@ -469,38 +477,19 @@ section > p > a {
 }
 
 .img-gallery img:nth-child(2) {
-  grid-column: 9 / span 4;
-  grid-row: span 3;
+  grid-column: 7 / span 6;
+  grid-row: 7 / span 5;
+  height: 80%;
 }
 
 .img-gallery img:nth-child(3) {
-  grid-column: 9 / span 4;
-  grid-row: 4 / span 3;
+  grid-column: span 6;
+  grid-row: 7 / span 6;
 }
 
 .img-gallery img:nth-child(4) {
-  grid-column: 1 / span 6;
-  grid-row: 7 / span 5;
-}
-
-.img-gallery img:nth-child(5) {
-  grid-column: 7 / span 3;
-  grid-row: 7 / span 2;
-}
-
-.img-gallery img:nth-child(6) {
-  grid-column: 10 / span 3;
-  grid-row: 7 / span 2;
-}
-
-.img-gallery img:nth-child(7) {
-  grid-column: 7 / span 3;
-  grid-row: 9 / span 3;
-}
-
-.img-gallery img:nth-child(8) {
-  grid-column: 10 / span 3;
-  grid-row: 9 / span 3;
+  grid-column: 9 / span 4;
+  grid-row: span 6;
 }
 
 .img-gallery img {
