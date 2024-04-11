@@ -140,6 +140,7 @@ body {
   max-height: 4rem;
   width: auto;
   margin-right: 10px;
+  animation: none !important;
 }
 
 .main-logo img:hover {
