@@ -20,8 +20,12 @@
     <nav class="navbar">
       <div class="main-logo">
         <a href="#main"
-          ><img src="./assets/PRIMARY LOGO.png" alt="Main Loogo"
-        /></a>
+          ><img
+            src="./assets/PRIMARY LOGO.png"
+            alt="Main Loogo"
+            loading="lazy"
+          />
+        </a>
       </div>
       <ul class="menu">
         <li><a href="#about" class="menu-item">About Us</a></li>
@@ -37,8 +41,17 @@
     <main>
       <div class="background">
         <section class="main-page" id="main">
-          <h1 class="title">Welcome to Main Logistics LTD</h1>
+          <h1 class="title"><span class="title-main">Main</span> Logistics</h1>
           <div class="main-svg"></div>
+        </section>
+
+        <!-- Video page -->
+
+        <section class="video">
+          <video autoplay loop muted>
+            <source src="./assets/gallery/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </section>
 
         <!-- About Us -->
@@ -48,6 +61,7 @@
               src="./assets/ABOUT US.png"
               alt="About us logo"
               class="section-img"
+              loading="lazy"
             />
           </div>
 
@@ -80,64 +94,71 @@
               src="./assets/MEET OUR TEAM.png"
               alt="Team logo"
               class="section-img"
+              loading="lazy"
             />
           </div>
-
-          <div class="team-members">
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Kamil Lis</h3>
-                <p class="member-role">Operation Manager</p>
-                <!-- <a
+          <div class="team-container">
+            <img
+              src="./assets/gallery/krakenimages-Y5bvRlcCx8k-unsplash.jpg"
+              alt="Office team photo"
+              loading="lazy"
+            />
+            <div class="team-members">
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Kamil Lis</h3>
+                  <p class="member-role">Operation Manager</p>
+                  <!-- <a
                     href="mailto: kamil@mainlogistics.co.uk"
                     class="contact-link email"
                     >kamil@mainlogistics.co.uk</a
                   > -->
-                <!-- <a href="tel:07712 237 642" class="contact-link"
+                  <!-- <a href="tel:07712 237 642" class="contact-link"
                               >07712 237 642
                             </a> -->
+                </div>
               </div>
-            </div>
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Agata Szyma</h3>
-                <p class="member-role">Account Manager</p>
-                <!-- <a href="tel:07864 653 133" class="contact-link"
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Agata Szyma</h3>
+                  <p class="member-role">Account Manager</p>
+                  <!-- <a href="tel:07864 653 133" class="contact-link"
                             >07864 653 133
                           </a> -->
+                </div>
               </div>
-            </div>
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Jagoda Lesniak</h3>
-                <p class="member-role">Account Clerk</p>
-                <!-- <a href="tel:07557 343 443" class="contact-link"
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Jagoda Lesniak</h3>
+                  <p class="member-role">Account Clerk</p>
+                  <!-- <a href="tel:07557 343 443" class="contact-link"
                             >07557 343 443
                           </a> -->
+                </div>
               </div>
-            </div>
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Gracjan Poplawski</h3>
-                <p class="member-role">Traffic / Account Operator</p>
-                <!-- <a href="tel:07585 188 033" class="contact-link"
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Gracjan Poplawski</h3>
+                  <p class="member-role">Traffic / Account Operator</p>
+                  <!-- <a href="tel:07585 188 033" class="contact-link"
                             >07585 188 033</a
                           > -->
+                </div>
               </div>
-            </div>
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Robert Michalski</h3>
-                <p class="member-role">Traffic Operator</p>
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Robert Michalski</h3>
+                  <p class="member-role">Traffic Operator</p>
+                </div>
               </div>
-            </div>
-            <div class="team-member-card">
-              <div class="card-content">
-                <h3 class="member-name">Ewa Kepa</h3>
-                <p class="member-role">Night Shift Operator</p>
-                <!-- <a href="tel:07367 428 397" class="contact-link"
+              <div class="team-member-card">
+                <div class="card-content">
+                  <h3 class="member-name">Ewa Kepa</h3>
+                  <p class="member-role">Night Shift Operator</p>
+                  <!-- <a href="tel:07367 428 397" class="contact-link"
                             >07367 428 397</a
                           > -->
+                </div>
               </div>
             </div>
           </div>
@@ -150,6 +171,7 @@
               src="./assets/EXPERT LOGISTICS.png "
               alt="Services logo"
               class="section-img"
+              loading="lazy"
             />
           </div>
 
@@ -173,6 +195,7 @@
           <img
             src="./assets/gallery/brian-stalter-arotxe540N4-unsplash.jpg"
             alt="Trucks"
+            loading="lazy"
           />
         </section>
 
@@ -183,20 +206,28 @@
               src="./assets/CONTACT.png"
               alt="Contact logo"
               class="section-img"
+              loading="lazy"
             />
           </div>
 
+          <p class="contact-text-main">We are open 7 days a week.</p>
           <p class="contact-text">
-            We are open 7 days a week. Our main telephone number is
+            Our main telephone number is:
             <a href="tel:0330 1339134" class="contact-link">0330 1339134</a>
           </p>
-          <p class="contact-text">Emails:</p>
-          <a href="mailto: kamil@mainlogistics.co.uk" class="contact-link email"
-            >operations@mainlogistics.co.uk</a
-          >
-          <a href="mailto: kamil@mainlogistics.co.uk" class="contact-link email"
-            >accounts@mainlogistics.co.uk</a
-          >
+          <p class="contact-text">
+            Emails:
+            <a
+              href="mailto: kamil@mainlogistics.co.uk"
+              class="contact-link email"
+              >operations@mainlogistics.co.uk</a
+            >
+            <a
+              href="mailto: kamil@mainlogistics.co.uk"
+              class="contact-link email"
+              >accounts@mainlogistics.co.uk</a
+            >
+          </p>
         </section>
 
         <!-- Gallery -->
@@ -212,26 +243,32 @@
             <img
               src="./assets/gallery/andy-li-CpsTAUPoScw-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
             <img
               src="./assets/gallery/teng-yuhong-qMehmIyaXvY-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
             <img
               src="./assets/gallery/venti-views-1cqIcrWFQBI-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
             <img
               src="./assets/gallery/timelab-sWOvgOOFk1g-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
             <img
               src="./assets/gallery/ian-taylor-jOqJbvo1P9g-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
             <img
               src="./assets/gallery/aron-yigin-lNpAmLA_bvQ-unsplash.jpg"
               alt="containers"
+              loading="lazy"
             />
           </div>
         </section>
