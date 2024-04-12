@@ -27,3 +27,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // Event listener for the logo
   logo.addEventListener("click", closeMenu);
 });
+
+document.addEventListener("scroll", function (e) {
+  const scrolled = window.scrollY;
+  const parallax = document.querySelector(".main-svg");
+  const coords = "20% " + scrolled * 0.2 + "px";
+  parallax.style.backgroundPosition = coords;
+});

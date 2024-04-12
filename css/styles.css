@@ -227,9 +227,13 @@ body {
 }
 
 /* Video */
+
 .video video {
   width: 90%;
-  height: auto;
+  height: 80%;
+  margin: 1rem auto;
+  border-radius: 10px;
+  opacity: 0.85;
 }
 /* Section styling */
 
@@ -243,6 +247,7 @@ body {
     scale: 1;
   }
 }
+
 section {
   background-color: rgba(255, 255, 255, 0.85);
   scroll-margin-top: 50px;
@@ -263,7 +268,7 @@ section {
 img {
   animation: appear linear both;
   animation-timeline: view();
-  animation-range: entry 25% cover 50%;
+  animation-range: entry 25% cover 30%;
 }
 
 section > p {
@@ -275,7 +280,7 @@ section > p {
   line-height: 1.6;
   animation: appear linear both;
   animation-timeline: view();
-  animation-range: entry 25% cover 50%;
+  animation-range: entry 25% cover 30%;
 }
 
 section > p > a {
@@ -291,8 +296,29 @@ section > p > a {
 }
 
 .section-logo img {
-  max-height: 20rem;
+  max-height: 15rem;
   width: auto;
+}
+
+.extras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.extras p {
+  text-align: left;
+}
+
+#social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media (max-width: 930px) {
@@ -305,6 +331,17 @@ section > p > a {
   .services img {
     max-width: 90%;
     height: auto;
+  }
+  .extras {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #social-media img {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -383,13 +420,17 @@ section > p > a {
   width: 50%;
 }
 
+.first-member {
+  grid-column: 1 / -1;
+}
+
 .team-member-card {
   margin: 0;
   overflow: hidden;
   transition: box-shadow 0.3s ease-in-out;
   animation: appear linear both;
   animation-timeline: view();
-  animation-range: entry 25% cover 50%;
+  animation-range: entry 25% cover 30%;
 }
 
 .team-member-card:hover {
