@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 document.addEventListener("scroll", function (e) {
   const scrolled = window.scrollY;
   const parallax = document.querySelector(".main-svg");
-  const coords = "20% " + scrolled * 0.2 + "px";
+  const coords = "30% " + scrolled * 0.25 + "px";
   parallax.style.backgroundPosition = coords;
 });
