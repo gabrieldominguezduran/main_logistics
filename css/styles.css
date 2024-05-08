@@ -149,13 +149,58 @@ body {
   cursor: pointer;
 }
 
+/* Hero page */
+
+.hero {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-wrapper {
+  padding-top: 10%;
+}
+
+/* Video */
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+video {
+  opacity: 0.5;
+}
+
+@media (max-width: 1025px) {
+  .hero-wrapper {
+    display: none;
+  }
+}
+
 /* Main page */
+
+.title {
+  color: var(--main-blue);
+  align-self: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 7rem;
+}
+
+.title-main {
+  color: var(--main-green);
+}
 
 .main-page {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  max-height: 80vh;
+  max-height: 100vh;
 }
 
 .main-svg {
@@ -170,76 +215,28 @@ body {
 
 @media (max-width: 930px) {
   .main-svg {
+    min-height: 65vh;
     margin-top: 5rem;
   }
-}
-
-.title {
-  color: var(--main-blue);
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  align-self: center;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3em;
-  transform: translate(10%, -10%);
-  background-image: linear-gradient(to right, #33996648, #339966);
-  background-size: 100% 10px;
-  background-repeat: no-repeat;
-  background-position: 100% 0%;
-  transition: background-size 0.7s, background-position 0.5s ease-in-out;
-  padding: 0.5em;
-  margin-right: 1rem;
-}
-
-.title-main {
-  color: var(--main-green);
-}
-
-.title:hover {
-  background-size: 100% 100%;
-  background-position: 0% 100%;
-  transition: background-position 0.7s, background-size 0.5s ease-in-out;
-  border-radius: 5px;
+  .title {
+    font-size: 5rem;
+  }
 }
 
 @media (max-width: 768px) {
   .main-page {
     grid-template-columns: 1fr;
-    max-height: 60vh;
+    margin-top: 1rem;
+  }
+  .title {
+    font-size: 4rem;
   }
   .main-svg {
     min-height: 50vh;
     margin-top: 0;
   }
-  .title {
-    transform: none;
-    font-size: 2em;
-    background-size: 90% 5px;
-    background-position: center 0%;
-  }
-
-  .title:hover {
-    transform: none;
-    font-size: 2em;
-    background-size: 90% 100%;
-    background-position: center 0%;
-  }
 }
 
-/* Video */
-
-.video video {
-  width: 65%;
-  margin: 1rem auto;
-  border-radius: 10px;
-  opacity: 0.85;
-}
-
-@media (max-width: 1025px) {
-  .video video {
-    width: 80%;
-  }
-}
 /* Section styling */
 
 @keyframes appear {
@@ -348,6 +345,109 @@ section > p > a {
   #social-media img {
     width: 30px;
     height: 30px;
+  }
+}
+
+/* Statistics section */
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 30%;
+  padding-top: 4rem;
+}
+
+.statistics > h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#deliveryChart {
+  width: 100%;
+  max-width: 400px;
+}
+
+#legend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#legend > h3 {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .statistics > h2 {
+    font-size: 1.5em;
+  }
+  .statistics {
+    flex-direction: column;
+  }
+  #legend {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #legend > h3 {
+    flex: 1 50%; /* Each legend item takes up half the width on small screens */
+  }
+}
+
+/* Testimonials section */
+
+.testimonials {
+  text-align: center;
+  color: var(--main-blue);
+  background-color: rgba(255, 255, 255, 0.85);
+  animation: appear linear both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 30%;
+  padding-top: 4rem;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: var(--main-blue);
+  margin-bottom: 1.875rem;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.testimonial {
+  background: #3399662f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  width: 30%;
+  min-width: 16rem;
+}
+
+.testimonial p {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.testimonial h3 {
+  margin-top: 1.25rem;
+  color: var(--main-green);
+  font-weight: normal;
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 

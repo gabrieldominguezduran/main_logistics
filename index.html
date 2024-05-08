@@ -40,18 +40,19 @@
     <!-- Main Page -->
     <main>
       <div class="background">
+        <div class="hero">
+          <section class="hero-wrapper">
+            <div class="video">
+              <video autoplay loop muted>
+                <source src="./assets/gallery/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </section>
+        </div>
         <section class="main-page" id="main">
           <h1 class="title"><span class="title-main">Main</span> Logistics</h1>
           <div class="main-svg"></div>
-        </section>
-
-        <!-- Video page -->
-
-        <section class="video">
-          <video autoplay loop muted>
-            <source src="./assets/gallery/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
         </section>
 
         <!-- About Us -->
@@ -263,6 +264,43 @@
                 diversity and flexibility in planning a load provides fully
                 comprehensive service.
               </p>
+            </div>
+          </div>
+        </section>
+        <!-- Statistics -->
+        <section class="statistics">
+          <h2>Containers delivered: 6487</h2>
+          <p>Statistics 2023</p>
+          <div>
+            <canvas id="deliveryChart" width="400" height="400"></canvas>
+            <div id="legend">
+              <!-- Legend will be populated by JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+
+        <section class="testimonials">
+          <h2>What Our Clients Say</h2>
+          <div class="testimonial-container">
+            <div class="testimonial">
+              <p>
+                “Main Logistics has been instrumental in streamlining our
+                shipping needs with their reliable and efficient service. Their
+                team is responsive and always available, making them a valuable
+                partner in our logistics operations.”
+              </p>
+              <h3>– Jane Doe, CEO of Acme Inc.</h3>
+            </div>
+            <div class="testimonial">
+              <p>
+                “We have been working with Main Logistics for over five years
+                now. Their commitment to on-time deliveries and their ability to
+                adapt to our changing needs has been a significant factor in our
+                supply chain success.”
+              </p>
+              <h3>– John Smith, Operations Manager</h3>
             </div>
           </div>
         </section>
